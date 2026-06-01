@@ -1,114 +1,63 @@
 # 🐾 Patudos Petshop
 
-> Site institucional + agendamento online para um petshop de bairro.
-> **Projeto final** da disciplina **Padrões Web para No Code e Low Code**.
+Site institucional de um petshop de bairro, onde o cliente conhece os serviços
+e **agenda banho e tosa online em 1 minuto**.
 
-[![Feito com HTML](https://img.shields.io/badge/HTML5-sem%C3%A2ntico-E34F26?logo=html5&logoColor=white)]()
-[![Feito com CSS](https://img.shields.io/badge/CSS3-responsivo-1572B6?logo=css3&logoColor=white)]()
-[![Feito com JS](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)]()
+[![HTML5](https://img.shields.io/badge/HTML5-sem%C3%A2ntico-E34F26?logo=html5&logoColor=white)]()
+[![CSS3](https://img.shields.io/badge/CSS3-responsivo-1572B6?logo=css3&logoColor=white)]()
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)]()
 
-🔗 **Site no ar:** https://SEU-USUARIO.github.io/patudos-petshop/
-🎥 **Vídeo pitch:** _(cole o link aqui)_
+🔗 **Acesse o site:** https://Jdmatta.github.io/patudos-petshop/
 
 ---
 
-## 📌 Sobre o projeto
+## O que você encontra
 
-**Problema.** Pequenos negócios locais precisam de presença online, mas não têm
-orçamento para contratar programadores.
+- **Serviços e preços** — banho, tosa, hidratação e leva-e-traz.
+- **Galeria** — fotos de pets carregadas em tempo real.
+- **Depoimentos** — avaliações de clientes do bairro.
+- **Agendamento online** — escolha o serviço, a data e seja contatado por WhatsApp.
 
-**Solução.** Um site one-page, rápido e acessível, onde o cliente conhece os
-serviços e **agenda banho/tosa em 1 minuto**.
+## Como usar o site
 
-- **Público-alvo:** tutores de cães e gatos do bairro (acesso majoritário por celular).
-- **Estrutura:** Início → Serviços → Galeria → Depoimentos → Agendamento → Contato.
+1. **Navegue** pelo menu no topo (Serviços, Galeria, Depoimentos, Agendar, Contato).
+   No celular, toque no ícone ☰ para abrir o menu.
+2. **Veja a galeria** na seção *Galeria* e toque em **↻ Carregar novas fotos**
+   para atualizar as imagens.
+3. **Agende um horário** na seção *Agendar*:
+   - Preencha seu nome, o nome e porte do pet, o serviço, a data e o WhatsApp.
+   - Toque em **Solicitar agendamento**. Você verá a confirmação na tela e o
+     retorno é feito pelo WhatsApp.
+4. **Modo claro/escuro** — toque no botão 🌙 / ☀️ no menu. Sua preferência fica salva.
 
-## ✨ Funcionalidades
+## Acessibilidade
 
-| Recurso | Como funciona |
-|---|---|
-| 📱 Navegação responsiva | Menu vira "hambúrguer" no celular (media query + JS). |
-| 🌙 Modo escuro | Botão alterna tema; preferência salva em `localStorage`. |
-| 🖼️ Galeria dinâmica | Fotos carregadas em tempo real da **Dog CEO API** (`fetch` + `async/await`). |
-| 🧭 Menu ativo por seção | Link destaca a seção visível (`IntersectionObserver`). |
-| 📝 Agendamento validado | Formulário com validação em JS, mensagens acessíveis e data mínima de hoje. |
-| ♿ Acessibilidade | HTML semântico, `aria-*`, skip link, foco visível, `alt` nas imagens. |
+- Navegação completa por teclado, com foco sempre visível.
+- Atalho "Pular para o conteúdo" (skip link) ao usar o teclado.
+- Textos alternativos nas imagens e bom contraste de cores.
+- Respeita a preferência do sistema por menos animações.
 
-## 🧱 Padrões web aplicados
+## Compatibilidade
 
-- **HTML5 semântico:** `header`, `nav`, `main`, `section`, `footer`, `form`, `dl`.
-- **CSS3:** variáveis (`:root`), Grid + Flexbox, `clamp()` (tipografia fluida),
-  media queries mobile-first, `prefers-reduced-motion`, modo escuro via `data-tema`.
-- **JavaScript ES6+:** `fetch`, `async/await`, manipulação do DOM,
-  `IntersectionObserver`, validação de formulário, `localStorage`.
+Funciona nos navegadores modernos (Chrome, Edge, Firefox, Safari), no
+computador e no celular — layout adaptável de 320 px a telas grandes.
 
-## 🔌 Integração externa (API)
-
-```
-GET https://dog.ceo/api/breeds/image/random/6
-→ { "message": ["url1", ...], "status": "success" }
-```
-Gratuita, sem chave de API. Ver `script.js → carregarGaleria()`.
-
-## 📂 Estrutura
-
-```
-patudos-petshop/
-├── index.html        # marcação semântica
-├── styles.css        # estilo, responsividade, modo escuro
-├── script.js         # API, scroll-spy, validação, interações
-├── relatorio.html    # relatório técnico (parte teórica) → exportar PDF
-├── roteiro-video.md  # roteiro do vídeo pitch
-├── .gitignore
-└── README.md
-```
-
-## ▶️ Rodar localmente
+## Rodando localmente (opcional)
 
 ```bash
-# Opção 1 — abrir index.html no navegador (duplo clique)
-
-# Opção 2 — servidor local (recomendado p/ a galeria)
+# basta abrir index.html no navegador, ou:
 python -m http.server 8000
-# acesse http://localhost:8000
+# depois acesse http://localhost:8000
 ```
 
-## 🚀 Publicar no GitHub Pages
+## Tecnologias
 
-1. Crie um repositório no GitHub chamado `patudos-petshop`.
-2. Suba os arquivos (veja comandos abaixo).
-3. No GitHub: **Settings → Pages → Branch: `main` / `/root` → Save**.
-4. Em ~1 min o site fica em `https://SEU-USUARIO.github.io/patudos-petshop/`.
-5. Cole o link no topo deste README e na capa do relatório.
-
-```bash
-git init
-git add .
-git commit -m "Patudos Petshop — projeto final"
-git branch -M main
-git remote add origin https://github.com/SEU-USUARIO/patudos-petshop.git
-git push -u origin main
-```
-
-## ✅ Acessibilidade & responsividade
-
-- [x] Contraste de cores WCAG AA
-- [x] Navegação por teclado com foco visível
-- [x] Skip link para o conteúdo
-- [x] `alt` descritivo nas imagens
-- [x] Layout fluido de 320 px a 1440 px+
-- [x] Respeita `prefers-reduced-motion`
+HTML5 semântico · CSS3 (Grid, Flexbox, variáveis, modo escuro) ·
+JavaScript (ES6+, `fetch`, validação de formulário).
+A galeria usa a [Dog CEO API](https://dog.ceo/dog-api/) — pública e gratuita.
 
 ---
 
-## 📦 Entregáveis da disciplina
-
-| # | Entregável | Onde está |
-|---|---|---|
-| 1 | Parte teórica (relatório PDF) | `relatorio.html` → exportar como PDF |
-| 2 | Parte prática (app + código + README) | este repositório + link do GitHub Pages |
-| 3 | Vídeo pitch (até 4 min) | `roteiro-video.md` → gravar e linkar |
-
----
-
-_Projeto acadêmico · 2026._
+📍 Rua dos Pinheiros, 123 · Vila Madalena · São Paulo/SP
+📞 (11) 9 0000-0000 · ✉️ oi@patudos.com.br
+🕘 Seg a Sáb, 8h às 19h

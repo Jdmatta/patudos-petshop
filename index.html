@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Patudos Petshop — banho, tosa e cuidados para o seu pet em São Paulo. Agende online com facilidade." />
+  <meta name="theme-color" content="#2563eb" />
+  <title>Patudos Petshop · Banho, Tosa e Carinho</title>
+
+  <!-- Favicon em SVG (emoji, sem arquivo externo) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" />
+
+  <!-- Open Graph / redes sociais -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Patudos Petshop · Banho, Tosa e Carinho" />
+  <meta property="og:description" content="Agende banho e tosa online para o seu pet em 1 minuto." />
+  <meta property="og:locale" content="pt_BR" />
+
+  <link rel="preconnect" href="https://dog.ceo" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Acessibilidade: link de pulo para o conteúdo -->
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" id="topo">
+    <div class="container nav-wrap">
+      <a class="brand" href="#topo" aria-label="Patudos Petshop, página inicial">
+        <span class="brand-icon" aria-hidden="true">🐾</span>
+        <span class="brand-name">Patudos</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu de navegação">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <nav aria-label="Navegação principal">
+        <ul class="menu" id="menu">
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#agendar">Agendar</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><button class="theme-btn" id="themeBtn" aria-label="Alternar modo claro e escuro">🌙</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Petshop de bairro · Vila Madalena, SP</p>
+          <h1 id="hero-title">Cuidado de verdade para quem é da família</h1>
+          <p class="lead">Banho, tosa, hidratação e muito carinho. Agende online em 1 minuto e deixe o resto com a gente.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#agendar">Agendar banho/tosa</a>
+            <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+          </div>
+          <dl class="stats">
+            <div><dt>+1.200</dt><dd>pets atendidos</dd></div>
+            <div><dt>4,9★</dt><dd>avaliação Google</dd></div>
+            <div><dt>8 anos</dt><dd>no bairro</dd></div>
+          </dl>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <div class="hero-emoji">🐶</div>
+          <p>"Voltou cheirosa e feliz!"</p>
+          <span>— Ana &amp; a Mel</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="section" aria-labelledby="servicos-title">
+      <div class="container">
+        <h2 id="servicos-title">Nossos serviços</h2>
+        <p class="section-sub">Preços a partir de, para porte pequeno. Porte médio e grande sob consulta.</p>
+        <ul class="cards" role="list">
+          <li class="card">
+            <span class="card-icon" aria-hidden="true">🛁</span>
+            <h3>Banho completo</h3>
+            <p>Shampoo neutro, secagem, perfume e laço ou gravata.</p>
+            <strong class="price">R$ 45</strong>
+          </li>
+          <li class="card">
+            <span class="card-icon" aria-hidden="true">✂️</span>
+            <h3>Tosa higiênica</h3>
+            <p>Aparada de patas, barriga e região íntima com segurança.</p>
+            <strong class="price">R$ 35</strong>
+          </li>
+          <li class="card">
+            <span class="card-icon" aria-hidden="true">💧</span>
+            <h3>Hidratação</h3>
+            <p>Tratamento para pelos secos com máscara nutritiva.</p>
+            <strong class="price">R$ 60</strong>
+          </li>
+          <li class="card">
+            <span class="card-icon" aria-hidden="true">🚐</span>
+            <h3>Leva e traz</h3>
+            <p>Buscamos e devolvemos seu pet em casa com conforto.</p>
+            <strong class="price">R$ 20</strong>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- GALERIA DINÂMICA (API externa) -->
+    <section id="galeria" class="section section-alt" aria-labelledby="galeria-title">
+      <div class="container">
+        <h2 id="galeria-title">Galeria de clientes</h2>
+        <p class="section-sub">Fotos carregadas em tempo real via <strong>Dog CEO API</strong> — clique para renovar.</p>
+        <div class="gallery" id="gallery" aria-live="polite" aria-busy="true">
+          <!-- Imagens injetadas via JavaScript -->
+        </div>
+        <button class="btn btn-primary" id="reloadGallery">↻ Carregar novas fotos</button>
+        <p class="gallery-status" id="galleryStatus" role="status"></p>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos" class="section" aria-labelledby="depo-title">
+      <div class="container">
+        <h2 id="depo-title">Quem confia na gente</h2>
+        <p class="section-sub">Tutores do bairro que já são da família Patudos.</p>
+        <ul class="depo-grid" role="list">
+          <li class="depo">
+            <p class="depo-text">"A Mel voltou cheirosa e super calma. Atendimento nota 10 e o leva-e-traz salvou meu dia."</p>
+            <p class="depo-autor"><span aria-hidden="true">⭐⭐⭐⭐⭐</span><br>Ana Paula · tutora da Mel</p>
+          </li>
+          <li class="depo">
+            <p class="depo-text">"Marquei pelo site em 1 minuto e confirmaram no WhatsApp na hora. Muito prático."</p>
+            <p class="depo-autor"><span aria-hidden="true">⭐⭐⭐⭐⭐</span><br>Rafael · tutor do Thor</p>
+          </li>
+          <li class="depo">
+            <p class="depo-text">"Pelo do meu poodle estava ressecado e a hidratação fez milagre. Recomendo demais."</p>
+            <p class="depo-autor"><span aria-hidden="true">⭐⭐⭐⭐⭐</span><br>Júlia · tutora da Nina</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- AGENDAMENTO (formulário) -->
+    <section id="agendar" class="section" aria-labelledby="agendar-title">
+      <div class="container form-grid">
+        <div>
+          <h2 id="agendar-title">Agende online</h2>
+          <p class="section-sub">Responda em até 2 horas no horário comercial. Sem custo de reserva.</p>
+          <ul class="checklist" role="list">
+            <li>✓ Confirmação por WhatsApp</li>
+            <li>✓ Profissionais certificados</li>
+            <li>✓ Produtos hipoalergênicos</li>
+          </ul>
+        </div>
+
+        <form id="bookingForm" class="form" novalidate>
+          <div class="field">
+            <label for="nome">Seu nome</label>
+            <input type="text" id="nome" name="nome" required autocomplete="name" />
+            <span class="error" data-for="nome"></span>
+          </div>
+          <div class="field">
+            <label for="pet">Nome e porte do pet</label>
+            <input type="text" id="pet" name="pet" placeholder="Ex: Mel, porte pequeno" required />
+            <span class="error" data-for="pet"></span>
+          </div>
+          <div class="field">
+            <label for="servico">Serviço</label>
+            <select id="servico" name="servico" required>
+              <option value="">Selecione…</option>
+              <option>Banho completo</option>
+              <option>Tosa higiênica</option>
+              <option>Hidratação</option>
+              <option>Leva e traz</option>
+            </select>
+            <span class="error" data-for="servico"></span>
+          </div>
+          <div class="field">
+            <label for="data">Data preferida</label>
+            <input type="date" id="data" name="data" required />
+            <span class="error" data-for="data"></span>
+          </div>
+          <div class="field">
+            <label for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(11) 9 0000-0000" required autocomplete="tel" />
+            <span class="error" data-for="whatsapp"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Solicitar agendamento</button>
+          <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contato" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h2 class="footer-brand">🐾 Patudos Petshop</h2>
+        <p>Rua dos Pinheiros, 123 · Vila Madalena · São Paulo/SP</p>
+      </div>
+      <div>
+        <h3>Contato</h3>
+        <p><a href="tel:+5511900000000">(11) 9 0000-0000</a></p>
+        <p><a href="mailto:oi@patudos.com.br">oi@patudos.com.br</a></p>
+      </div>
+      <div>
+        <h3>Horário</h3>
+        <p>Seg a Sáb · 8h às 19h</p>
+        <p>Domingo · fechado</p>
+      </div>
+    </div>
+    <p class="copyright">© <span id="ano">2026</span> Patudos Petshop · Projeto acadêmico — Padrões Web No Code/Low Code</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
