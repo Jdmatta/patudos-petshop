@@ -49,7 +49,6 @@ themeBtn.addEventListener("click", () => {
 /* ---------- 3. Galeria dinâmica via Dog CEO API ---------- */
 const gallery = document.getElementById("gallery");
 const reloadBtn = document.getElementById("reloadGallery");
-const galleryStatus = document.getElementById("galleryStatus");
 const QTD_FOTOS = 6;
 
 function mostrarSkeleton() {
@@ -61,7 +60,6 @@ function mostrarSkeleton() {
 
 async function carregarGaleria() {
   mostrarSkeleton();
-  galleryStatus.textContent = "Carregando fotos…";
   try {
     // API pública e gratuita — retorna URLs de fotos aleatórias de cães
     const resp = await fetch(
@@ -76,11 +74,9 @@ async function carregarGaleria() {
           `<img src="${url}" alt="Foto de um cão cliente do Patudos (${i + 1})" loading="lazy" />`
       )
       .join("");
-    galleryStatus.textContent = `${dados.message.length} fotos carregadas da Dog CEO API.`;
   } catch (err) {
-    gallery.innerHTML = "";
-    galleryStatus.textContent =
-      "Não foi possível carregar as fotos agora. Verifique a conexão e tente de novo.";
+    gallery.innerHTML =
+      '<p class="gallery-status">Não foi possível carregar as fotos agora. Tente de novo.</p>';
     console.error("Erro ao buscar galeria:", err);
   } finally {
     gallery.setAttribute("aria-busy", "false");
