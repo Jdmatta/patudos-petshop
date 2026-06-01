@@ -25,15 +25,25 @@ menu.querySelectorAll("a").forEach((a) =>
 
 /* ---------- 2. Dark mode com persistência ---------- */
 const themeBtn = document.getElementById("themeBtn");
+const themeIcon = document.getElementById("themeIcon").querySelector("use");
+
+function aplicarIconeTema(tema) {
+  // mostra sol no escuro (clique volta p/ claro) e lua no claro
+  themeIcon.setAttribute("href", tema === "escuro" ? "#ic-sun" : "#ic-moon");
+}
+
 const temaSalvo = localStorage.getItem("tema");
-if (temaSalvo) document.documentElement.setAttribute("data-tema", temaSalvo);
+if (temaSalvo) {
+  document.documentElement.setAttribute("data-tema", temaSalvo);
+  aplicarIconeTema(temaSalvo);
+}
 
 themeBtn.addEventListener("click", () => {
   const atual = document.documentElement.getAttribute("data-tema");
   const novo = atual === "escuro" ? "claro" : "escuro";
   document.documentElement.setAttribute("data-tema", novo);
   localStorage.setItem("tema", novo);
-  themeBtn.textContent = novo === "escuro" ? "☀️" : "🌙";
+  aplicarIconeTema(novo);
 });
 
 /* ---------- 3. Galeria dinâmica via Dog CEO API ---------- */
