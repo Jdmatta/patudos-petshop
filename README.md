@@ -42,13 +42,7 @@ e **agenda banho e tosa online em 1 minuto**.
 Funciona nos navegadores modernos (Chrome, Edge, Firefox, Safari), no
 computador e no celular — layout adaptável de 320 px a telas grandes.
 
-## Rodando localmente (opcional)
 
-```bash
-# basta abrir index.html no navegador, ou:
-python -m http.server 8000
-# depois acesse http://localhost:8000
-```
 
 ## Tecnologias
 

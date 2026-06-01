@@ -9,3 +9,7 @@ Thumbs.db
 # Saídas geradas
 *.pdf
 trab.txt
+
+# Entregáveis da disciplina (não publicar no site)
+relatorio.html
+roteiro-video.md
